@@ -1,29 +1,27 @@
 package study;
 
-import java.time.LocalDate;
-
 public class Student {
+	private int number;
 	private String name;
-	private int birthYear;
+	private int age;
 	
-	public void setName(String name) { //메소드
+	Student(){  //1번 생성자
+		number = 100;
+		name = "New Student";
+		age =18;
+	}
+	
+	Student(int number,String name,int age){ //2번 생성자
+		this.number = number;
 		this.name = name;
+		this.age = age;
 	}
 	
-	public void setBirthYear(int BirthYear) {
-		if(birthYear >= 1900) {
-			this.birthYear = BirthYear;
-			return;
-		}//if
+	public String toString() {
+		return "Student [number=" + number + ",name=" + name + ", age=" + age + "]";
 	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public int getAge() {
-		LocalDate d = LocalDate.now();
-		int year = d.getYear();
-		return (year - birthYear);
-	}
+//	public static void main(String[] args) {
+//
+//	}
+
 }
