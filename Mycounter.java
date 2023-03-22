@@ -36,7 +36,7 @@ public class Mycounter {
 		mc.setValue(10); //2
 		Mycounter.increase(mc); //4  | 11로 교체
 		System.out.println(mc.getValue());  //5
-		System.out.println(mc.value);
+		System.out.println(mc.value);       //다른곳에서 실행시 에러: private value
 	}
 
 }
