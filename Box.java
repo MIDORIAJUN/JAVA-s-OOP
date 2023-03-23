@@ -24,6 +24,21 @@ public class Box {
 		}
 		return box2;
 	}
+	
+	/*
+	 * 인자로 주어지는 Box 객체와 동일한 너비와 높이를 가지는 Box인지 체크하는 메소드
+	 * 같으면 true, 다르면 false를 반환
+	 */
+	public boolean isSameBox(Box box) {
+		/*
+		 * 나의 width,Length,height가 인자로 주어진 box의 그것과 모두 같으면 true를 반환,
+		 * 그렇지 않으면 false
+		 */
+		if(box.width == this.width && this.length == box.length && this.height == box.height) // 
+			return true; //여기서 종료하므로 else는 생략가능
+		return false;
+	}
+	
 	public static void main(String[] args) {
 		 Box b = new Box(10,20,50);    //b의 주소로 저장    // 1
 		 Box b1 = new Box(10,30,30);   //b1의 주소로 저장   // 1
@@ -33,7 +48,11 @@ public class Box {
 		 
 		 //값이 Box타입 이므로 저장할 변수를 Box타입의 변수에 저장한다
 		 Box largerBox = Box.whoisLargerBox(b, b1); //인자값이 참조변수(객체) //클래스 변수이므로 그냥 불러오기 가능  // 3
+		 boolean result = b.isSameBox(b1);          //false
+		 System.out.println("박스와 박스1는 같다:" + result);
+		 System.out.println();
 		 System.out.println("더큰 박스의 부피:" + largerBox.getVolume());
+		 //System.out.println(b1.width);
 
 	}
 
