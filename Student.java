@@ -1,27 +1,47 @@
 package study;
 
-public class Student {
-	private int number;
-	private String name;
-	private int age;
-	
-	Student(){  //1ë²ˆ ìƒì„±ì
-		number = 100;
-		name = "New Student";
-		age =18;
-	}
-	
-	Student(int number,String name,int age){ //2ë²ˆ ìƒì„±ì
-		this.number = number;
-		this.name = name;
-		this.age = age;
-	}
-	
-	public String toString() {
-		return "Student [number=" + number + ",name=" + name + ", age=" + age + "]";
-	}
-//	public static void main(String[] args) {
-//
-//	}
+public class Stud3 extends Comparable{
+	  private String name;
+	  private String stdNum;
 
+	  public String getName() {
+	    return name;
+	  }
+	  public void setName(String name) {
+	    this.name = name;
+	  }
+	  public String getStdNum() {
+	    return stdNum;
+	  }
+	  public void setStdNum(String stdNum) {
+	    this.stdNum = stdNum;
+	  }
+
+	  public Stud3(String name, String stdNum) {
+	    this.name = name;
+	    this.stdNum = stdNum;
+	  }
+
+	  @Override
+	  public String toString() {
+	    return "[ÀÌ¸§: " + name + ", ÇĞ¹ø: " + stdNum+ "]";
+	  }
+
+	  @Override
+	  public int compareTo(Comparable anotherVal) {
+	    //ÇĞ»ı°´Ã¼µéÀ» ÀÌ¸§ ¼øÀ¸·Î Á¤·ÄÇÒ ¼ö ÀÖµµ·Ï ÀÌ¸§ ºñ±³¸¦ ÇÏÀÚ. 
+	    //³»°¡ °¡Áø name°ú, anotherVal °´Ã¼ÀÇ ÀÌ¸§À» ºñ±³ÇØ¼­
+	    //¾ËÆÄºª ¼øÀ¸·Î ³» ÀÌ¸§ ¾ÕÀÌ¸é -1, ÀÌ¸§ÀÌ °°À¸¸é 0, 
+	    //³» ÀÌ¸§ÀÌ µÚ¸é 1À» ¹İÈ¯ÇÏÀÚ. 
+		  Stud3 std = (Stud3)anotherVal; // ÇÏÇâ Çüº¯È¯. 
+	    //String stdName = std.getName();
+	    //String Å¬·¡½º´Â ÀÌ¹Ì compareTo ¸Ş¼Òµå¸¦ °¡Áø´Ù. 
+	    //ÀÎÀÚ·Î Àü´ŞµÈ ¹®ÀÚ¿­°ú ºñ±³ÇØ »çÀü ¼ø¼­¿¡ µû¶ó 1, 0, -1À» ¹İÈ¯ÇÑ´Ù. 
+	    //return name.compareTo(stdName);
+
+	    //ÇĞ¹ø ¼øÀ¸·Î Á¤·ÄÇÏ°íÀÚ ÇÑ´Ù¸é 
+	    String yourStdNum = std.getStdNum();
+	    return stdNum.compareTo(yourStdNum);
+	  }
+	  
 }
